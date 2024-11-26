@@ -23,6 +23,7 @@ jobs:
           path: backend
           rearm_component_id: 00814c52-4045-416d-a6ec-286208b50e37
           enable_sbom: 'true'
+          source_code_sbom_type: 'npm'
   build-frontend:
     name: Build And Push Frontend
     runs-on: ubuntu-latest
@@ -40,4 +41,5 @@ jobs:
           path: frontend
           rearm_component_id: d1fbd55f-1133-47e4-99dc-59fa46fbed7c
           enable_sbom: 'true'
+          source_code_sbom_type: 'npm'
 
