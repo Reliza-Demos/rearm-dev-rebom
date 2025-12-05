@@ -2,9 +2,6 @@ on: [push]
 
 name: Build Docker Image And Submit Metadata To Reliza Hub
 
-permissions:
-  contents: write
-
 jobs:
   build-backend:
     name: Build And Push Backend
@@ -25,6 +22,8 @@ jobs:
           enable_sbom: 'true'
           source_code_sbom_type: 'npm'
   build-frontend:
+    permissions:
+      id-token: write
     name: Build And Push Frontend
     runs-on: ubuntu-latest
     steps:
