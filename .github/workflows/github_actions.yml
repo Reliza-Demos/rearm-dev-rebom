@@ -42,4 +42,5 @@ jobs:
           rearm_component_id: d1fbd55f-1133-47e4-99dc-59fa46fbed7c
           enable_sbom: 'true'
           source_code_sbom_type: 'npm'
+          enable_public_cosign_sigstore: 'true'
 
