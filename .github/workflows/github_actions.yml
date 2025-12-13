@@ -10,6 +10,7 @@ jobs:
       - name: Build And Submit Release metadata to ReARM for Backend
         uses: relizaio/rearm-docker-action@f941cae7577a55838e8a583d3652b6917f3e89e4 # v1.6.0
         with:
+          rearm_api_url: https://dev.rearmhq.com
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
           registry_host: registry.test.relizahub.com
@@ -30,6 +31,7 @@ jobs:
       - name: Build And Submit Release metadata to ReARM for Frontend
         uses: relizaio/rearm-docker-action@f941cae7577a55838e8a583d3652b6917f3e89e4 # v1.6.0
         with:
+          rearm_api_url: https://dev.rearmhq.com
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
           registry_host: registry.test.relizahub.com
