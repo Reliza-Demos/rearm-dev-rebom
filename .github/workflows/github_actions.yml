@@ -7,8 +7,8 @@ jobs:
     name: Build And Push Backend
     runs-on: ubuntu-latest
     steps:
-      - name: Rearm Build And Submit Release metadata action
-        uses: relizaio/rearm-docker-action@main
+      - name: Build And Submit Release metadata to ReARM for Backend
+        uses: relizaio/rearm-docker-action@f941cae7577a55838e8a583d3652b6917f3e89e4 # v1.6.0
         with:
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
@@ -27,8 +27,8 @@ jobs:
     name: Build And Push Frontend
     runs-on: ubuntu-latest
     steps:
-      - name: RelizaHub Build And Submit Release metadata action
-        uses: relizaio/rearm-docker-action@main
+      - name: Build And Submit Release metadata to ReARM for Frontend
+        uses: relizaio/rearm-docker-action@f941cae7577a55838e8a583d3652b6917f3e89e4 # v1.6.0
         with:
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
@@ -42,8 +42,8 @@ jobs:
           enable_sbom: 'true'
           source_code_sbom_type: 'npm'
           enable_public_cosign_sigstore: 'true'
-          enable_shiftleftcyber: 'true'
-          shiftleftcyber_host: https://secure-sbom-api-prod-gateway-dhncnyq8.uc.gateway.dev
-          shiftleftcyber_key: ${{ secrets.ShiftLeftCyberApiKey }}
-          shiftleftcyber_pub_key_id: ${{ secrets.ShiftLeftCyberPubKeyId }}
+          enable_securesbom: 'true'
+          securesbom_host: https://secure-sbom-api-prod-gateway-dhncnyq8.uc.gateway.dev
+          securesbom_api_key: ${{ secrets.ShiftLeftCyberApiKey }}
+          securesbom_pub_key_id: ${{ secrets.ShiftLeftCyberPubKeyId }}
 
