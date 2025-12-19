@@ -44,7 +44,7 @@ jobs:
           enable_sbom: 'true'
           source_code_sbom_type: 'npm'
           enable_public_cosign_sigstore: 'true'
-          enable_securesbom: 'false'
+          enable_securesbom: 'true'
           securesbom_host: https://secure-sbom-api-prod-gateway-dhncnyq8.uc.gateway.dev
           securesbom_api_key: ${{ secrets.ShiftLeftCyberApiKey }}
           securesbom_pub_key_id: ${{ secrets.ShiftLeftCyberPubKeyId }}
